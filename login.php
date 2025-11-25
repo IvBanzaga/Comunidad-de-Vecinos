@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 
     /*
     Solicita un usuario y contraseña y comprueba que esta es correcta, si lo es, redirije la aplicación a usuarios.php
@@ -41,13 +45,17 @@
     }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="es">
+
 
 <head>
   <meta charset="utf-8">
   <title>Acceso a la aplicación</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="public/icon.svg">
 </head>
 
 <body class="bg-light">
@@ -76,6 +84,40 @@
                 <button type="submit" class="btn btn-primary">Acceder</button>
               </div>
             </form>
+
+            <!-- Información de usuarios de prueba para acceso rápido -->
+            <div class="mt-4 p-3 border rounded bg-light">
+              <h3 class="h6 mb-3 text-primary">Usuarios de prueba</h3>
+              <div class="table-responsive">
+                <table class="table table-sm align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Rol</th>
+                      <th>Usuario</th>
+                      <th>Contraseña</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Admin</td>
+                      <td><code>admin</code></td>
+                      <td><code>admin</code></td>
+                    </tr>
+                    <tr>
+                      <td>Presidente</td>
+                      <td><code>presidente</code></td>
+                      <td><code>presidente</code></td>
+                    </tr>
+                    <tr>
+                      <td>Vecino</td>
+                      <td><code>vecino</code></td>
+                      <td><code>vecino</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <small class="text-muted d-block mt-2">Puedes usar estos datos para probar la aplicación.</small>
+            </div>
           </div>
         </div>
       </div>

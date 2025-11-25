@@ -84,7 +84,7 @@
     /* TODO: Obtener datos para editar vecino. Depuración: breakpoint útil para comprobar el array $vecinoEditar. */
     $vecinoEditar = null;
     if ($accion === 'editar' && isset($_POST['id'])) {
-        $stmt = $conexionPDO->prepare("SELECT v.*, vi.piso, vi.bloque, vi.letra FROM Vecinos v LEFT JOIN Vivienda vi ON v.id = vi.idVecino WHERE v.id = ?");
+        $stmt = $conexionPDO->prepare("SELECT v.*, vi.piso, vi.bloque, vi.letra FROM vecinos v LEFT JOIN vivienda vi ON v.id = vi.idVecino WHERE v.id = ?");
         $stmt->execute([$_POST['id']]);
         $vecinoEditar = $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -287,9 +287,9 @@
                 <form method="post" style="display:inline;">
                   <input type="hidden" name="idUsuario" value="<?php echo $vecino['usuarioId'] ?>">
                   <select name="nuevoRol" class="form-select form-select-sm" style="width:120px; display:inline;">
-                    <option value="vecino"                                                                                     <?php echo $vecino['rol'] === 'vecino' ? 'selected' : '' ?>>Vecino
+                    <option value="vecino"                                                                                                                               <?php echo $vecino['rol'] === 'vecino' ? 'selected' : '' ?>>Vecino
                     </option>
-                    <option value="presidente"                                                                                             <?php echo $vecino['rol'] === 'presidente' ? 'selected' : '' ?>>Presidente
+                    <option value="presidente"                                                                                                                                           <?php echo $vecino['rol'] === 'presidente' ? 'selected' : '' ?>>Presidente
                     </option>
                   </select>
                   <button type="submit" name="cambiar_rol" class="btn btn-sm btn-warning">Cambiar</button>

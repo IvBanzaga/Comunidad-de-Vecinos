@@ -28,9 +28,9 @@
 
     /* TODO: Obtener datos del vecino, vivienda y cuotas usando funciones seguras.
        Depuración: breakpoint útil para comprobar los arrays $vecino, $vivienda y $cuotas. */
-    $vecino   = obtener_vecino($conexionPDO, $userId);
-    $vivienda = obtener_vivienda($conexionPDO, $userId);
-    $cuotas   = obtener_cuotas($conexionPDO, $userId);
+    $vecino   = obtener_vecino($conexionPDO, $userId);   // Asegúrate que la función usa 'vecinos' en minúsculas
+    $vivienda = obtener_vivienda($conexionPDO, $userId); // Asegúrate que la función usa 'vivienda' en minúsculas
+    $cuotas   = obtener_cuotas($conexionPDO, $userId);   // Asegúrate que la función usa 'cuotas' en minúsculas
 
     /* TODO: Cambiar contraseña del vecino usando función segura.
       Depuración: breakpoint útil para comprobar el valor de $nueva_pass y el resultado. */
@@ -196,19 +196,19 @@
           <div class="card-body p-0">
             <?php if ($vecino): ?>
             <div class="info-item">
-              <span class="info-icon"><i class="fas fa-user"></i></span>Nombre:                                                                                <?php echo $vecino['nombre'] ?>
+              <span class="info-icon"><i class="fas fa-user"></i></span>Nombre:                                                                                                                                                               <?php echo $vecino['nombre'] ?>
             </div>
             <div class="info-item">
-              <span class="info-icon"><i class="fas fa-id-card"></i></span>DNI:                                                                                <?php echo $vecino['dni'] ?>
+              <span class="info-icon"><i class="fas fa-id-card"></i></span>DNI:                                                                                                                                                               <?php echo $vecino['dni'] ?>
             </div>
             <div class="info-item">
-              <span class="info-icon"><i class="fas fa-phone"></i></span>Teléfono:                                                                                    <?php echo $vecino['telefono'] ?>
+              <span class="info-icon"><i class="fas fa-phone"></i></span>Teléfono:                                                                                                                                                                       <?php echo $vecino['telefono'] ?>
             </div>
             <div class="info-item">
-              <span class="info-icon"><i class="fas fa-envelope"></i></span>Email:                                                                                   <?php echo $vecino['email'] ?>
+              <span class="info-icon"><i class="fas fa-envelope"></i></span>Email:                                                                                                                                                                     <?php echo $vecino['email'] ?>
             </div>
             <div class="info-item">
-              <span class="info-icon"><i class="fas fa-calendar-alt"></i></span>Fecha Alta:                                                                                            <?php echo $vecino['fechaAlta'] ?>
+              <span class="info-icon"><i class="fas fa-calendar-alt"></i></span>Fecha Alta:                                                                                                                                                                                       <?php echo $vecino['fechaAlta'] ?>
             </div>
             <?php endif; ?>
           </div>
